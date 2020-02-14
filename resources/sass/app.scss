@@ -1,0 +1,20 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.td-center td {
+    text-align: center !important;
+}
+
+.tac {
+    text-align: center;
+}
+
+table.is-bordered td, table.is-bordered th{
+    border: 1px solid black;
+}

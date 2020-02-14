@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData">
+    <serverData>
+      <paths name="wne-sftp">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/home/u461885/wiki.nayanova.edu/chess" local="$PROJECT_DIR$" web="/chess" />
+            <mapping deploy="/home/u461885/wiki.nayanova.edu/www/chess" local="$PROJECT_DIR$/public" web="/chess" />
+          </mappings>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>
