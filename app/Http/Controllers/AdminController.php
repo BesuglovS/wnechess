@@ -21,7 +21,7 @@ class AdminController extends Controller
         $players = Player::all();
 
         foreach($players as $player) {
-            $player->rating = PlayerController::NEW_PLAYER_RATING;
+            $player->rating = AdminPlayerController::NEW_PLAYER_RATING;
             $player->gamesPlayed = 0;
             $player->wins = 0;
             $player->draws = 0;
