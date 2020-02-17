@@ -33,7 +33,7 @@
                     <td>{{$game->tournamentName}}</td>
                     <td>
                         @if($game->pgn != "")
-                        <a href="/Game/{{$game->id}}">Открыть PGN</a>
+                        <a href="{{ url('/')}}/Game/{{$game->id}}">Открыть PGN</a>
                         @endif
                     </td>
                 </tr>

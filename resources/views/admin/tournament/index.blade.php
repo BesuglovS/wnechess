@@ -10,11 +10,15 @@
         <table style="margin: 10px" class="table td-center is-bordered">
             <tr style="text-align: center;">
                 <th>Название турнира</th>
+                <th>Количество игр</th>
                 <th>Редактировать</th>
             </tr>
             @foreach($tournaments as $tournament)
                 <tr>
                     <td>{{$tournament->name}}</td>
+                    <td>
+                        {{$tournament->game_count}}
+                    </td>
                     <td><a href="{{ url('/') }}/adminTournaments/{{$tournament->id}}/edit">Редактировать</a></td>
                 </tr>
             @endforeach

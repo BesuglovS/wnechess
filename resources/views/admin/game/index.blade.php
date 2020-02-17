@@ -22,7 +22,7 @@
                 <th>Результат</th>
                 <th>Дата</th>
                 <th>Турнир</th>
-                <th>Редактировать</th>
+                <th>Опции</th>
             </tr>
             @foreach($games as $game)
                 <tr>
@@ -33,7 +33,13 @@
                     <td>{{$game->result == 1 ? "1:0" : (($game->result == 0) ? "1/2:1/2" : "0:1")}}</td>
                     <td>{{\Carbon\Carbon::parse($game->date)->format('d.m.Y H:i:s')}}</td>
                     <td>{{$game->tournamentName}}</td>
-                    <td><a href="/adminGames/{{$game->id}}/edit">Редактировать</a></td>
+                    <td>
+                        <a href="/adminGames/{{$game->id}}/edit">Редактировать</a>
+                        @if($game->pgn != "")
+                            <br />
+                            <a href="{{ url('/')}}/Game/{{$game->id}}">Открыть PGN</a>
+                        @endif
+                    </td>
                 </tr>
             @endforeach
         </table>

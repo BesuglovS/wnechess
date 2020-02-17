@@ -19,16 +19,17 @@ Auth::routes(['register' => false]);
 
 Route::get('Players', 'PlayerController@index');
 Route::get('Player/{id}', 'PlayerController@show');
-Route::get('Games', 'GameController@showIndex');
+Route::get('Games', 'GameController@index');
 Route::get('Game/{id}', 'GameController@show');
 Route::get('Games/Player/{id}', 'GameController@playerGames');
 Route::get('Tournaments', 'TournamentController@showIndex');
+Route::get('Tournament/{id}', 'TournamentController@show');
 
 Route::group(['middleware' => ['auth']], function () {
 //    ADMIN
     Route::resource('adminPlayers', 'AdminPlayerController');
-    Route::resource('adminGames', 'GameController');
-    Route::resource('adminTournaments', 'TournamentController');
+    Route::resource('adminGames', 'AdminGameController');
+    Route::resource('adminTournaments', 'AdminTournamentController');
 
     Route::get('/admin', 'AdminController@index');
 

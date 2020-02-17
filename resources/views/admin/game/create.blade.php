@@ -49,6 +49,11 @@
             </div>
 
             <div style="margin-top: 1em;">
+                <p>PGN</p>
+                <textarea name="pgn" rows="10" cols="80"></textarea>
+            </div>
+
+            <div style="margin-top: 1em;">
                 <button type="submit" class="button is-primary">Добавить</button>
 
                 <span style="margin-left: 20px">
