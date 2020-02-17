@@ -1,10 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="">
+    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="Fix constant reference">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2020_02_17_045811_add_pgn_column_to_games_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/jqx.base.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/jqxcore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/jqxsplitter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/game/show.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/game/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/game/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,9 +146,12 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql&#10;mysql.8" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../naschedule" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/js" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -133,13 +164,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\WebSites\chess\resources\views\admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WebSites\chess\public\js" />
+      <recent name="E:\WebSites\chess\public\css" />
       <recent name="E:\WebSites\chess\resources\views\player" />
       <recent name="D:\WebSites\chess\resources\views\tournament" />
       <recent name="D:\WebSites\chess\resources\views\game" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\WebSites\chess\resources\views\admin" />
     </key>
   </component>
   <component name="RunManager">
@@ -178,12 +211,36 @@
       <workItem from="1581677545525" duration="3928000" />
       <workItem from="1581683330029" duration="1194000" />
       <workItem from="1581684563577" duration="2020000" />
-      <workItem from="1581687936399" duration="692000" />
+      <workItem from="1581687936399" duration="829000" />
+      <workItem from="1581914152783" duration="7784000" />
     </task>
+    <task id="LOCAL-00001" summary="Fix constant reference">
+      <created>1581692209386</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1581692209386</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Fix constant reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix constant reference" />
   </component>
   <component name="WindowStateProjectService">
     <state x="2472" y="179" key="#Deployment" timestamp="1581681431200">
@@ -196,6 +253,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#Options/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579332089022" />
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1581914733128">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581914733128" />
     <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1579334767311">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -213,23 +274,36 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="716" y="225" key="Github.UntrackedFilesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581686527089" />
-    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1581672778261">
+    <state x="540" y="263" key="IDE.errors.dialog" timestamp="1581921634659">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581672778261" />
+    <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581921634659" />
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1581916956886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581916956886" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579330307071" />
     <state x="2381" y="165" key="SettingsEditor" timestamp="1581681543299">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581681543299" />
-    <state x="681" y="261" width="540" height="524" key="StructurePopup" timestamp="1579334987638">
+    <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1581916923003">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581916923003" />
     <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579334987638" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1581685088785">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1581920605834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581685088785" />
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581920605834" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1581692211811">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581692211811" />
+    <state x="669" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1581916475509">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="669" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581916475509" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1579929938018">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -268,10 +342,10 @@
     </state>
     <state x="2928" y="267" key="ftp.server.browser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581680973901" />
     <state x="1008" y="267" key="ftp.server.browser/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579332131646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581687940314">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1581916907926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581687940314" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581916907926" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579335165642" />
   </component>
 </project>

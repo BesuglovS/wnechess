@@ -20,6 +20,7 @@ Auth::routes(['register' => false]);
 Route::get('Players', 'PlayerController@index');
 Route::get('Player/{id}', 'PlayerController@show');
 Route::get('Games', 'GameController@showIndex');
+Route::get('Game/{id}', 'GameController@show');
 Route::get('Games/Player/{id}', 'GameController@playerGames');
 Route::get('Tournaments', 'TournamentController@showIndex');
 

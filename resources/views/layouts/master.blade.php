@@ -15,6 +15,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
+    @yield('head')
+
     <meta name="api-base-url" content="{{ url('') }}" />
 </head>
 <body>
