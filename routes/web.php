@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
+Route::get('Play', 'MainController@play');
+
 Route::get('Players', 'PlayerController@index');
 Route::get('Player/{id}', 'PlayerController@show');
 Route::get('Games', 'GameController@index');

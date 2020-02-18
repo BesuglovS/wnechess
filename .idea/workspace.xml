@@ -19,21 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="Chessbase pgn game view page and links">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminGameController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminTournamentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" afterDir="false" />
+    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="Tournament &amp; game edit">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/main/play.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GameController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/game/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/game/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/game/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/game/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/game/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/game/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tournament/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tournament/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tournament/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tournament/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/game/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/game/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/welcome.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/welcome.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -215,7 +205,8 @@
       <workItem from="1581684563577" duration="2020000" />
       <workItem from="1581687936399" duration="829000" />
       <workItem from="1581914152783" duration="8542000" />
-      <workItem from="1581926357034" duration="14309000" />
+      <workItem from="1581926357034" duration="15686000" />
+      <workItem from="1582001736321" duration="1691000" />
     </task>
     <task id="LOCAL-00001" summary="Fix constant reference">
       <created>1581692209386</created>
@@ -231,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1581922389615</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Tournament &amp; game edit">
+      <created>1581942242694</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1581942242694</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -251,7 +249,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Fix constant reference" />
     <MESSAGE value="Chessbase pgn game view page and links" />
-    <option name="LAST_COMMIT_MESSAGE" value="Chessbase pgn game view page and links" />
+    <MESSAGE value="Tournament &amp; game edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tournament &amp; game edit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Deployment" timestamp="1581926674490">
@@ -268,10 +267,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="887" y="169" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581926644737" />
-    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1581939311658">
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582002756782">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581939311658" />
+    <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582002756782" />
     <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579334767311" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581684433266">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -306,10 +305,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581921634659" />
-    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1581937206110">
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1582002779847">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581937206110" />
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582002779847" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579330307071" />
     <state x="2381" y="165" key="SettingsEditor" timestamp="1581681543299">
       <screen x="1920" y="0" width="1920" height="1040" />
@@ -324,10 +323,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581920605834" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1581922392949">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1581942246085">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581922392949" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581942246085" />
     <state x="669" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1581916475509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

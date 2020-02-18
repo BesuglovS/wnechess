@@ -31,7 +31,7 @@
                     <div class="card tac">
                         <div class="card-body">
                             <div class="card-body">
-                                <a href="{{ url('/')}}/admin">Административная панель</a>
+                                <a href="{{ url('/')}}/Play">Играть</a>
                             </div>
                         </div>
                     </div>
