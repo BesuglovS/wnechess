@@ -35,7 +35,7 @@ class GameController extends Controller
                 'tournaments.name as tournamentName')
             ->get();
 
-        return view('admin.game.index', compact('games'));
+        return view('game.index', compact('games'));
     }
 
 

@@ -16,8 +16,8 @@ class AdminTournamentController extends Controller
     public function index()
     {
         $tournaments = DB::table('tournaments')
-            ->join('games', 'tournaments.id', '=', 'games.tournament_id')
-            ->select('tournaments.id', 'tournaments.name', DB::raw('Count(*) as game_count'))
+            ->leftjoin('games', 'tournaments.id', '=', 'games.tournament_id')
+            ->select('tournaments.id', 'tournaments.name', 'tournaments.type', DB::raw('Count(' . env('DB_TABLE_PREFIX', '') . 'games.id) as game_count'))
             ->groupBy('tournaments.id')
             ->get();
 
@@ -44,6 +44,7 @@ class AdminTournamentController extends Controller
     {
         $newTournament = new Tournament();
         $newTournament->name = $request->name;
+        $newTournament->type = $request->type;
 
         $newTournament->save();
 
@@ -119,6 +120,7 @@ class AdminTournamentController extends Controller
     {
         $tournament = Tournament::find($tournament_id);
         $tournament->name = $request->name;
+        $tournament->type = $request->type;
         $tournament->save();
 
         return redirect('/adminTournaments');

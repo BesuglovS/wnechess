@@ -14,7 +14,17 @@
 
             <input style="margin-top: 5px; width: 300px" name="name" placeholder="Название турнира" type="text" >
 
-            <button type="submit" class="button is-primary">Создать</button>
+            <div>
+                <p>Тип турнира</p>
+                <select style="width: 300px" name="type">
+                    <option value="Свободный">Свободный</option>
+                    <option value="Круговой">Круговой</option>
+                    <option value="Швейцарская система">Швейцарская система</option>
+                    <option value="Олимпийская система">Олимпийская система</option>
+                </select>
+            </div>
+
+            <button type="submit" style="margin-top: 1em;" class="button is-primary">Создать</button>
         </form>
     </div>
 @endsection

@@ -1999,10 +1999,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Player",
-  props: ['player', 'playerGames'],
+  props: ['player', 'playerGames', 'prefix'],
   methods: {
     reformatDate: function reformatDate(date) {
       return date.substr(8, 2) + '.' + date.substr(5, 2) + '.' + date.substr(0, 4);
@@ -55814,7 +55819,21 @@ var render = function() {
                         _vm._v(_vm._s(_vm.reformatDateTime(playerGame.date)))
                       ]),
                       _vm._v(" "),
-                      _c("td", [_vm._v(_vm._s(playerGame.tournamentName))])
+                      _c("td", [_vm._v(_vm._s(playerGame.tournamentName))]),
+                      _vm._v(" "),
+                      _c("td", [
+                        playerGame.pgn != ""
+                          ? _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: _vm.prefix + "/Game/" + playerGame.id
+                                }
+                              },
+                              [_vm._v("Открыть PGN")]
+                            )
+                          : _vm._e()
+                      ])
                     ]
                   )
                 })
@@ -55873,7 +55892,9 @@ var staticRenderFns = [
       _vm._v(" "),
       _c("th", [_vm._v("Дата")]),
       _vm._v(" "),
-      _c("th", [_vm._v("Турнир")])
+      _c("th", [_vm._v("Турнир")]),
+      _vm._v(" "),
+      _c("th", [_vm._v("PGN")])
     ])
   }
 ]

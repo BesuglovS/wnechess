@@ -32,6 +32,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('adminPlayers', 'AdminPlayerController');
     Route::resource('adminGames', 'AdminGameController');
     Route::resource('adminTournaments', 'AdminTournamentController');
+    Route::resource('adminTournamentNodes', 'TournamentNodeController');
+    Route::get('adminTournamentNodes/{id}/delete', 'TournamentNodeController@manualDestroy');
+
+    Route::get('adminTournament/{id}/editSchema', 'TournamentNodeController@editSchema');
+    Route::get('adminTournament/{id}/editSchema/addNode', 'TournamentNodeController@editSchemaAddNode');
 
     Route::get('/admin', 'AdminController@index');
 

@@ -9,6 +9,7 @@
         <div class="row justify-content-center">
             <div class="col-12">
                 <player
+                    prefix="{{ url('/')}}"
                     :player="{{$player}}"
                     :player-games="{{json_encode($playerGames)}}"
                 >

@@ -28,7 +28,4 @@
             @endforeach
         </table>
     </div>
-    <div style="text-align: center">
-        <a href="{{ url('/') }}/adminPlayers/create" class="button is-primary">Добавить игрока</a>
-    </div>
 @endsection

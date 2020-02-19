@@ -1,14 +1,18 @@
 @extends('layouts.master')
 
 @section('title')
-    {{$tournament->name}}
+    Редактирование схемы турнира {{$tournament->name}}
 @endsection
 
 @section('content')
-    <div class="container" style="align-items: center; display: flex; flex-direction:column; justify-content: center;">
-        <div class="container alert alert-info alert-block"><a href="{{ url('/') }}/Tournaments">Список турниров</a></div>
-        <div style="text-align: center">
-            <div>Список игр турнира <br /><strong>"{{$tournament->name}}"</strong></div>
+    <div class="container alert alert-info alert-block"><a href="{{ url('/') }}/adminTournaments">Список турниров</a></div>
+    <div style="text-align: center">Редактирование схемы турнира <strong>"{{$tournament->name}}"</strong></div>
+    <div class="container" style="align-items: center; display: flex; flex-direction: column; justify-content: center;">
+
+        <div style="align-items: center; display: flex; flex-direction: row; justify-content: center;">
+            <a href="{{ url('/') }}/adminTournaments/{{$tournament->id}}/edit">Редактировать турнир</a>
+
+            <a style="margin-left: 2em;" href="{{ url('/') }}/adminTournament/{{$tournament->id}}/editSchema/addNode">Добавить узел</a>
         </div>
 
         <table style="margin: 10px" class="table td-center is-bordered">
@@ -35,6 +39,8 @@
                     <td>@if($tournamentNode->game_id !== null){{$tournamentNode->result == 1 ? "1:0" : (($tournamentNode->result == 0) ? "1/2:1/2" : "0:1")}}@endif</td>
                     <td>@if($tournamentNode->game_id !== null){{\Carbon\Carbon::parse($tournamentNode->date)->format('d.m.Y H:i:s')}}@endif</td>
                     <td>
+                        <a href="{{ url('/')}}/adminTournamentNodes/{{$tournamentNode->id}}/edit">Редактировать</a>
+                        <a href="{{ url('/')}}/adminTournamentNodes/{{$tournamentNode->id}}/delete">Удалить</a>
                         @if($tournamentNode->pgn != "")
                             <a href="{{ url('/')}}/Game/{{$tournamentNode->game_id}}">Открыть PGN</a>
                         @endif

@@ -10,12 +10,14 @@
         <table style="margin: 10px" class="table td-center is-bordered">
             <tr style="text-align: center;">
                 <th>Название турнира</th>
+                <th>Тип турнира</th>
                 <th>Количество игр</th>
                 <th>Редактировать</th>
             </tr>
             @foreach($tournaments as $tournament)
                 <tr>
                     <td>{{$tournament->name}}</td>
+                    <td>{{$tournament->type}}</td>
                     <td>
                         {{$tournament->game_count}}
                     </td>

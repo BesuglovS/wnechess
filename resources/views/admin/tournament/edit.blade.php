@@ -14,13 +14,49 @@
                 @csrf
                 @method('patch')
 
-                <input style="margin-top: 5px; width: 300px" name="name" type="text" value="{{$tournament->name}}">
+                <div>
+                    <p>Название турнира</p>
+                    <input style="margin-top: 5px; width: 300px" name="name" type="text" value="{{$tournament->name}}">
+                </div>
 
-                <button type="submit" class="button is-primary">Сохранить</button>
+                <div>
+                    <p>Тип турнира</p>
+                    <select style="width: 300px" name="type">
+                            <option value="Свободный"
+                                    @if ($tournament->type == "Свободный")
+                                    selected="selected"
+                                @endif
+                            >Свободный</option>
+
+                            <option value="Круговой"
+                                    @if ($tournament->type == "Круговой")
+                                    selected="selected"
+                                @endif
+                            >Круговой</option>
+
+                            <option value="Швейцарская система"
+                                    @if ($tournament->type == "Швейцарская система")
+                                    selected="selected"
+                                @endif
+                            >Швейцарская система</option>
+
+                            <option value="Олимпийская система"
+                                    @if ($tournament->type == "Олимпийская система")
+                                    selected="selected"
+                                @endif
+                            >Олимпийская система</option>
+                    </select>
+                </div>
+
+                <div style="margin-top: 1em;">
+                    <button type="submit" class="button is-primary">Сохранить</button>
+                </div>
             </form>
 
             <div style="margin-left: 3em;">
-                <a href="{{ url('/') }}/adminGames/create">Добавить игру</a>
+                <a href="{{ url('/') }}/adminGames/create">Добавить игру</a> <br />
+
+                <a href="{{ url('/') }}/adminTournament/{{$tournament->id}}/editSchema">Редактировать схему</a>
             </div>
         </div>
 

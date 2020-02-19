@@ -41,6 +41,7 @@
                                 <th>Результат</th>
                                 <th>Дата</th>
                                 <th>Турнир</th>
+                                <th>PGN</th>
                             </tr>
 
                             <tr v-for="playerGame in playerGames"
@@ -54,6 +55,10 @@
                                 <td>{{playerGame.result == 1 ? "1:0" : ((playerGame.result == 0) ? "1/2:1/2" : "0:1")}}</td>
                                 <td>{{reformatDateTime(playerGame.date)}}</td>
                                 <td>{{playerGame.tournamentName}}</td>
+                                <td>
+                                    <a v-if="playerGame.pgn != ''"
+                                       :href="prefix + '/Game/' + playerGame.id">Открыть PGN</a>
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -70,7 +75,8 @@
         name: "Player",
         props: [
             'player',
-            'playerGames'
+            'playerGames',
+            'prefix'
         ],
         methods: {
             reformatDate(date) {
