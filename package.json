@@ -25,6 +25,7 @@
     },
     "dependencies": {
         "buefy": "^0.8.9",
-        "moment": "^2.24.0"
+        "moment": "^2.24.0",
+        "vue-tournament-bracket": "^2.0.0"
     }
 }

@@ -2069,6 +2069,248 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTree.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TournamentTree.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TournamentTreeNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TournamentTreeNode */ "./resources/js/components/TournamentTreeNode.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "TournamentTree",
+  props: ['prefix', 'player', 'tournament', 'tournamentNodes'],
+  components: {
+    TournamentTreeNode: _TournamentTreeNode__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      finalNodes: [],
+      nodesList: {}
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    var fNodes = this.tournamentNodes.filter(function (n) {
+      return n.parent_id == null;
+    });
+    this.finalNodes = fNodes;
+    this.nodesList = {};
+
+    var _loop = function _loop(key) {
+      var node = fNodes[key];
+      var list = [];
+      var result = [];
+      list.push(node.node_id);
+
+      var _loop2 = function _loop2() {
+        var listItem = list.pop();
+
+        var ch = _this.tournamentNodes.filter(function (n) {
+          return n.parent_id == listItem;
+        });
+
+        var _loop3 = function _loop3(childKey) {
+          var child = ch[childKey];
+          result.push(child.node_id);
+
+          var ch2 = _this.tournamentNodes.filter(function (n) {
+            return n.parent_id == child.node_id;
+          });
+
+          if (ch2.length !== 0) {
+            list.push(child.node_id);
+          }
+        };
+
+        for (var childKey in ch) {
+          _loop3(childKey);
+        }
+      };
+
+      while (list.length !== 0) {
+        _loop2();
+      }
+
+      _this.nodesList[node.node_id] = _this.tournamentNodes.filter(function (n) {
+        return result.includes(n.node_id);
+      });
+    };
+
+    for (var key in fNodes) {
+      _loop(key);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTreeNode.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TournamentTreeNode.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TournamentTreeNode__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TournamentTreeNode */ "./resources/js/components/TournamentTreeNode.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  name: "TournamentTreeNode",
+  props: ['node_id', 'name', 'game_id', 'pgn', 'player1Name', 'player1Id', 'player2Name', 'player2Id', 'result', 'childNodes', 'prefix'],
+  components: {
+    TournamentTreeNode: _TournamentTreeNode__WEBPACK_IMPORTED_MODULE_0__["default"]
+  },
+  data: function data() {
+    return {
+      nodesList: {},
+      directDescendantNodes: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.nodesList = {};
+    this.directDescendantNodes = this.childNodes.filter(function (n) {
+      return n.parent_id == _this.node_id;
+    });
+
+    var _loop = function _loop(key) {
+      var node = _this.childNodes[key];
+      var list = [];
+      var result = [];
+      list.push(node.node_id);
+
+      var _loop2 = function _loop2() {
+        var listItem = list.pop();
+
+        var ch = _this.childNodes.filter(function (n) {
+          return n.parent_id == listItem;
+        });
+
+        var _loop3 = function _loop3(childKey) {
+          var child = ch[childKey];
+          result.push(child.node_id);
+
+          var ch2 = _this.childNodes.filter(function (n) {
+            return n.parent_id == child.node_id;
+          });
+
+          if (ch2.length !== 0) {
+            list.push(child.node_id);
+          }
+        };
+
+        for (var childKey in ch) {
+          _loop3(childKey);
+        }
+      };
+
+      while (list.length !== 0) {
+        _loop2();
+      }
+
+      _this.nodesList[node.node_id] = _this.childNodes.filter(function (n) {
+        return result.includes(n.node_id);
+      });
+    };
+
+    for (var key in this.directDescendantNodes) {
+      _loop(key);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -6613,6 +6855,25 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 // module
 exports.push([module.i, "\n.gameWon[data-v-11281ee8] {\n    background-color: rgba(50,255,41,0.1);\n}\n.gameLost[data-v-11281ee8] {\n    background-color: rgba(255,2,51,0.1);\n}\n.gameDraw[data-v-11281ee8] {\n    background-color: rgba(255,255,255,0.1);\n}\n.bold[data-v-11281ee8] {\n    font-weight: 700;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.winner[data-v-0e2838f4] {\n    padding: 5px;\n    background-color: #228B2288;\n}\n.loser[data-v-0e2838f4] {\n    padding: 5px;\n    background-color: #d9534f88;\n}\n.drawn[data-v-0e2838f4] {\n    padding: 5px;\n    background-color: #385d7a88;\n}\n.gameName[data-v-0e2838f4] {\n    padding: 5px;\n    background-color: #0088cc88;\n}\n", ""]);
 
 // exports
 
@@ -55090,6 +55351,36 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/lib/addStyles.js":
 /*!****************************************************!*\
   !*** ./node_modules/style-loader/lib/addStyles.js ***!
@@ -55960,6 +56251,223 @@ var staticRenderFns = [
     ])
   }
 ]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTree.vue?vue&type=template&id=3c9ca4d2&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TournamentTree.vue?vue&type=template&id=3c9ca4d2&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "container alert alert-info alert-block" }, [
+          _c("a", { attrs: { href: _vm.prefix + "/Tournaments" } }, [
+            _vm._v("Список турниров")
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _c("span", { staticStyle: { "margin-right": "1em" } }, [
+              _vm._v("\n                        Дерево соревнования "),
+              _c("strong", [_vm._v('"' + _vm._s(_vm.tournament.name) + '"')])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "card-body" }, [
+            _c(
+              "div",
+              { staticClass: "wrapper" },
+              _vm._l(_vm.finalNodes, function(finalNode) {
+                return _c("tournament-tree-node", {
+                  key: finalNode.node_id,
+                  attrs: {
+                    node_id: finalNode.node_id,
+                    name: finalNode.name,
+                    game_id: finalNode.game_id,
+                    pgn: finalNode.pgn,
+                    player1Name: finalNode.pl1Name,
+                    player1Id: finalNode.player1_id,
+                    player2Name: finalNode.pl2Name,
+                    player2Id: finalNode.player2_id,
+                    result: finalNode.result,
+                    childNodes: _vm.nodesList[finalNode.node_id],
+                    prefix: _vm.prefix
+                  }
+                })
+              }),
+              1
+            )
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTreeNode.vue?vue&type=template&id=0e2838f4&scoped=true&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/TournamentTreeNode.vue?vue&type=template&id=0e2838f4&scoped=true& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "item head-item" }, [
+    _c(
+      "div",
+      {
+        class: {
+          "item-parent": _vm.childNodes.length !== 0,
+          "item-child": _vm.childNodes.length == 0
+        }
+      },
+      [
+        _c(
+          "div",
+          {
+            staticClass: "nodeBox",
+            staticStyle: { display: "flex", "flex-direction": "column" }
+          },
+          [
+            _c(
+              "div",
+              {
+                class: {
+                  winner: _vm.result === 1,
+                  loser: _vm.result === -1,
+                  drawn: _vm.result === 0
+                }
+              },
+              [
+                _c(
+                  "a",
+                  { attrs: { href: _vm.prefix + "/Player/" + _vm.player1Id } },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.player1Name) +
+                        "\n                "
+                    )
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                class: {
+                  winner: _vm.result === -1,
+                  loser: _vm.result === 1,
+                  drawn: _vm.result === 0
+                }
+              },
+              [
+                _c(
+                  "a",
+                  { attrs: { href: _vm.prefix + "/Player/" + _vm.player2Id } },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.player2Name) +
+                        "\n                "
+                    )
+                  ]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c("div", { staticClass: "gameName" }, [
+              _vm.game_id !== null
+                ? _c(
+                    "a",
+                    { attrs: { href: _vm.prefix + "/Game/" + _vm.game_id } },
+                    [
+                      _vm._v("\n                    " + _vm._s(_vm.name) + " "),
+                      _vm.pgn !== "" ? _c("span", [_vm._v("(pgn)")]) : _vm._e()
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.game_id == null
+                ? _c("div", [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.name) +
+                        "\n                "
+                    )
+                  ])
+                : _vm._e()
+            ])
+          ]
+        )
+      ]
+    ),
+    _vm._v(" "),
+    _vm.childNodes.length !== 0
+      ? _c(
+          "div",
+          { staticClass: "item-childrens" },
+          _vm._l(_vm.directDescendantNodes, function(childNode) {
+            return _c(
+              "div",
+              { staticClass: "item-child" },
+              [
+                _c("tournament-tree-node", {
+                  key: childNode.node_id,
+                  attrs: {
+                    node_id: childNode.node_id,
+                    name: childNode.name,
+                    game_id: childNode.game_id,
+                    pgn: childNode.pgn,
+                    player1Name: childNode.pl1Name,
+                    player1Id: childNode.player1_id,
+                    player2Name: childNode.pl2Name,
+                    player2Id: childNode.player2_id,
+                    result: childNode.result,
+                    childNodes: _vm.nodesList[childNode.node_id],
+                    prefix: _vm.prefix
+                  }
+                })
+              ],
+              1
+            )
+          }),
+          0
+        )
+      : _vm._e()
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -68150,6 +68658,8 @@ window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.
 
 Vue.component('recalculate-rating', __webpack_require__(/*! ./components/RecalculateRating */ "./resources/js/components/RecalculateRating.vue")["default"]);
 Vue.component('player', __webpack_require__(/*! ./components/Player */ "./resources/js/components/Player.vue")["default"]);
+Vue.component('tournament-tree', __webpack_require__(/*! ./components/TournamentTree */ "./resources/js/components/TournamentTree.vue")["default"]);
+Vue.component('tournament-tree-node', __webpack_require__(/*! ./components/TournamentTreeNode */ "./resources/js/components/TournamentTreeNode.vue")["default"]);
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -68359,6 +68869,162 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecalculateRating_vue_vue_type_template_id_1263a735_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_RecalculateRating_vue_vue_type_template_id_1263a735_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TournamentTree.vue":
+/*!****************************************************!*\
+  !*** ./resources/js/components/TournamentTree.vue ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TournamentTree_vue_vue_type_template_id_3c9ca4d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TournamentTree.vue?vue&type=template&id=3c9ca4d2&scoped=true& */ "./resources/js/components/TournamentTree.vue?vue&type=template&id=3c9ca4d2&scoped=true&");
+/* harmony import */ var _TournamentTree_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TournamentTree.vue?vue&type=script&lang=js& */ "./resources/js/components/TournamentTree.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TournamentTree_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TournamentTree_vue_vue_type_template_id_3c9ca4d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TournamentTree_vue_vue_type_template_id_3c9ca4d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "3c9ca4d2",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/TournamentTree.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/TournamentTree.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************!*\
+  !*** ./resources/js/components/TournamentTree.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTree_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TournamentTree.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTree.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTree_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/TournamentTree.vue?vue&type=template&id=3c9ca4d2&scoped=true&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/components/TournamentTree.vue?vue&type=template&id=3c9ca4d2&scoped=true& ***!
+  \***********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTree_vue_vue_type_template_id_3c9ca4d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TournamentTree.vue?vue&type=template&id=3c9ca4d2&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTree.vue?vue&type=template&id=3c9ca4d2&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTree_vue_vue_type_template_id_3c9ca4d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTree_vue_vue_type_template_id_3c9ca4d2_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/TournamentTreeNode.vue":
+/*!********************************************************!*\
+  !*** ./resources/js/components/TournamentTreeNode.vue ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TournamentTreeNode_vue_vue_type_template_id_0e2838f4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TournamentTreeNode.vue?vue&type=template&id=0e2838f4&scoped=true& */ "./resources/js/components/TournamentTreeNode.vue?vue&type=template&id=0e2838f4&scoped=true&");
+/* harmony import */ var _TournamentTreeNode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TournamentTreeNode.vue?vue&type=script&lang=js& */ "./resources/js/components/TournamentTreeNode.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _TournamentTreeNode_vue_vue_type_style_index_0_id_0e2838f4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css& */ "./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _TournamentTreeNode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TournamentTreeNode_vue_vue_type_template_id_0e2838f4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TournamentTreeNode_vue_vue_type_template_id_0e2838f4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "0e2838f4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/TournamentTreeNode.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/TournamentTreeNode.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************!*\
+  !*** ./resources/js/components/TournamentTreeNode.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./TournamentTreeNode.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTreeNode.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_style_index_0_id_0e2838f4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/style-loader!../../../node_modules/css-loader??ref--6-1!../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../node_modules/postcss-loader/src??ref--6-2!../../../node_modules/vue-loader/lib??vue-loader-options!./TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTreeNode.vue?vue&type=style&index=0&id=0e2838f4&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_style_index_0_id_0e2838f4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_style_index_0_id_0e2838f4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_style_index_0_id_0e2838f4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_style_index_0_id_0e2838f4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_style_index_0_id_0e2838f4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/components/TournamentTreeNode.vue?vue&type=template&id=0e2838f4&scoped=true&":
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/TournamentTreeNode.vue?vue&type=template&id=0e2838f4&scoped=true& ***!
+  \***************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_template_id_0e2838f4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../node_modules/vue-loader/lib??vue-loader-options!./TournamentTreeNode.vue?vue&type=template&id=0e2838f4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/TournamentTreeNode.vue?vue&type=template&id=0e2838f4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_template_id_0e2838f4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TournamentTreeNode_vue_vue_type_template_id_0e2838f4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

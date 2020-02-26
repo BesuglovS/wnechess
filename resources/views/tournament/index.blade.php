@@ -11,6 +11,7 @@
             <tr style="text-align: center;">
                 <th>Название турнира</th>
                 <th>Тип турнира</th>
+                <th>Схема</th>
                 <th>Количество игр</th>
             </tr>
             @foreach($tournaments as $tournament)
@@ -21,6 +22,13 @@
                         </a>
                     </td>
                     <td>{{$tournament->type}}</td>
+                    <td>
+                        @if($tournament->type == "Олимпийская система")
+                            <a href="{{ url('/')}}/Tournament/Graph/{{$tournament->id}}">
+                                Схема
+                            </a>
+                        @endif
+                    </td>
                     <td>
                         {{$tournament->game_count}}
                     </td>

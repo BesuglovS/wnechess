@@ -26,6 +26,7 @@ Route::get('Game/{id}', 'GameController@show');
 Route::get('Games/Player/{id}', 'GameController@playerGames');
 Route::get('Tournaments', 'TournamentController@showIndex');
 Route::get('Tournament/{id}', 'TournamentController@show');
+Route::get('Tournament/Graph/{id}', 'TournamentController@graph');
 
 Route::group(['middleware' => ['auth']], function () {
 //    ADMIN
@@ -44,3 +45,5 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::post('/adminRecalculateRatingAction', 'AdminController@AdminRecalculateRatingAction');
 });
+
+

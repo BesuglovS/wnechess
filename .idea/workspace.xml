@@ -19,10 +19,20 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="Tournament editing/viewing features">
+    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="url prefix for game edit">
+      <change afterPath="$PROJECT_DIR$/resources/js/components/TournamentTree.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/components/TournamentTreeNode.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/tournament/graph.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/game/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/game/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tournament/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tournament/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tournament/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +217,8 @@
       <workItem from="1582001736321" duration="21162000" />
       <workItem from="1582087870188" duration="17841000" />
       <workItem from="1582173331900" duration="837000" />
-      <workItem from="1582693454787" duration="346000" />
+      <workItem from="1582693454787" duration="6182000" />
+      <workItem from="1582702591400" duration="17674000" />
     </task>
     <task id="LOCAL-00001" summary="Fix constant reference">
       <created>1581692209386</created>
@@ -244,7 +255,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582120690045</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="url prefix for game edit">
+      <created>1582693984865</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1582693984865</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,7 +287,8 @@
     <MESSAGE value="Tournament &amp; game edit" />
     <MESSAGE value="Play with chessbase server" />
     <MESSAGE value="Tournament editing/viewing features" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tournament editing/viewing features" />
+    <MESSAGE value="url prefix for game edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="url prefix for game edit" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Deployment" timestamp="1581926674490">
@@ -291,6 +310,10 @@
     </state>
     <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582021566037" />
     <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579334767311" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582694069640">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582694069640" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581684433266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -324,28 +347,28 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="263" key="IDE.errors.dialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582111573588" />
-    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1582089928925">
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1582721423342">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582089928925" />
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582721423342" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579330307071" />
     <state x="2381" y="165" key="SettingsEditor" timestamp="1581681543299">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581681543299" />
-    <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1582693764212">
+    <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1582699914710">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582693764212" />
+    <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582699914710" />
     <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579334987638" />
-    <state width="498" height="446" key="SwitcherDM" timestamp="1582111959799">
+    <state width="498" height="446" key="SwitcherDM" timestamp="1582699637958">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582111959799" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1582120694573">
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582699637958" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1582694148394">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582120694573" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582694148394" />
     <state x="669" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1581916475509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -354,6 +377,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579929938018" />
+    <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1582718530339">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="565" y="131" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582718530339" />
     <state x="1913" y="0" width="974" height="1047" key="dock-window-1" timestamp="1582030712462">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
@@ -389,10 +416,10 @@
     </state>
     <state x="2928" y="267" key="ftp.server.browser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581680973901" />
     <state x="1008" y="267" key="ftp.server.browser/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579332131646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582693660201">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582721363396">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582693660201" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582721363396" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579335165642" />
   </component>
 </project>
