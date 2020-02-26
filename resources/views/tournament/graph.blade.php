@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('title')
-    Дерево
+    Дерево турнира {{$tournament->name}}
 @endsection
 
 @section('head')
@@ -40,7 +40,7 @@
             background-color: beige;
         }
 
-        .item-parent:after {
+        .item-parent.parent-with-children:after {
             position: absolute;
             content: '';
             width: 25px;

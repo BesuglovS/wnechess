@@ -1,6 +1,10 @@
 <template>
     <div class="item head-item">
-        <div :class="{ 'item-parent': childNodes.length !== 0, 'item-child': childNodes.length == 0 }">
+        <div :class="{
+            'item-parent': ((this.root) || (this.childNodes.length !== 0)),
+            'item-child': ((this.childNodes.length == 0) && (!this.root)),
+            'parent-with-children': (this.childNodes.length !== 0)
+        }">
             <div class="nodeBox" style="display: flex; flex-direction: column;">
                 <div :class="{'winner' : result === 1, 'loser' : result === -1, 'drawn' : result === 0}">
                     <a :href="prefix + '/Player/' + player1Id">
@@ -36,6 +40,7 @@
                                       :result="childNode.result"
                                       :childNodes="nodesList[childNode.node_id]"
                                       :prefix="prefix"
+                                      :root=false
                 >
                 </tournament-tree-node>
             </div>
@@ -59,7 +64,8 @@
             'player2Id',
             'result',
             'childNodes',
-            'prefix'
+            'prefix',
+            'root'
         ],
         components: {
             TournamentTreeNode

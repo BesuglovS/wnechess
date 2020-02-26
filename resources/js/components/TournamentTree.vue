@@ -26,6 +26,7 @@
                                                   :result="finalNode.result"
                                                   :childNodes="nodesList[finalNode.node_id]"
                                                   :prefix="prefix"
+                                                  :root=true
                             >
                             </tournament-tree-node>
                         </div>

@@ -2117,6 +2117,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TournamentTree",
@@ -2242,10 +2243,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "TournamentTreeNode",
-  props: ['node_id', 'name', 'game_id', 'pgn', 'player1Name', 'player1Id', 'player2Name', 'player2Id', 'result', 'childNodes', 'prefix'],
+  props: ['node_id', 'name', 'game_id', 'pgn', 'player1Name', 'player1Id', 'player2Name', 'player2Id', 'result', 'childNodes', 'prefix', 'root'],
   components: {
     TournamentTreeNode: _TournamentTreeNode__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
@@ -56307,7 +56313,8 @@ var render = function() {
                     player2Id: finalNode.player2_id,
                     result: finalNode.result,
                     childNodes: _vm.nodesList[finalNode.node_id],
-                    prefix: _vm.prefix
+                    prefix: _vm.prefix,
+                    root: true
                   }
                 })
               }),
@@ -56346,8 +56353,9 @@ var render = function() {
       "div",
       {
         class: {
-          "item-parent": _vm.childNodes.length !== 0,
-          "item-child": _vm.childNodes.length == 0
+          "item-parent": this.root || this.childNodes.length !== 0,
+          "item-child": this.childNodes.length == 0 && !this.root,
+          "parent-with-children": this.childNodes.length !== 0
         }
       },
       [
@@ -56455,7 +56463,8 @@ var render = function() {
                     player2Id: childNode.player2_id,
                     result: childNode.result,
                     childNodes: _vm.nodesList[childNode.node_id],
-                    prefix: _vm.prefix
+                    prefix: _vm.prefix,
+                    root: false
                   }
                 })
               ],
