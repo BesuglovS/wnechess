@@ -19,12 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="Tournament graph view">
+    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="Tournament graph view extra connection fix">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/TournamentTree.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/TournamentTree.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/TournamentTreeNode.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/TournamentTreeNode.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tournament/graph.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tournament/graph.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tournament/show.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +209,8 @@
       <workItem from="1582173331900" duration="837000" />
       <workItem from="1582693454787" duration="6182000" />
       <workItem from="1582702591400" duration="18331000" />
-      <workItem from="1582735492981" duration="2717000" />
+      <workItem from="1582735492981" duration="3366000" />
+      <workItem from="1582783304132" duration="640000" />
     </task>
     <task id="LOCAL-00001" summary="Fix constant reference">
       <created>1581692209386</created>
@@ -262,7 +261,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582722614366</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Tournament graph view extra connection fix">
+      <created>1582738300415</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1582738300415</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +295,8 @@
     <MESSAGE value="Tournament editing/viewing features" />
     <MESSAGE value="url prefix for game edit" />
     <MESSAGE value="Tournament graph view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Tournament graph view" />
+    <MESSAGE value="Tournament graph view extra connection fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tournament graph view extra connection fix" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="179" key="#Deployment" timestamp="1581926674490">
@@ -357,19 +364,19 @@
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2381" y="165" key="SettingsEditor/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581681543299" />
-    <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1582699914710">
+    <state x="681" y="261" width="570" height="524" key="StructurePopup" timestamp="1582783327670">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582699914710" />
+    <state x="681" y="261" width="570" height="524" key="StructurePopup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582783327670" />
     <state x="681" y="261" width="540" height="524" key="StructurePopup/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579334987638" />
     <state width="498" height="446" key="SwitcherDM" timestamp="1582735503661">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582735503661" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1582722617171">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1582738302278">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582722617171" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582738302278" />
     <state x="669" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1581916475509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -417,10 +424,10 @@
     </state>
     <state x="2928" y="267" key="ftp.server.browser/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581680973901" />
     <state x="1008" y="267" key="ftp.server.browser/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579332131646" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582721363396">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582783617785">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582721363396" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582783617785" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579335165642" />
   </component>
 </project>
