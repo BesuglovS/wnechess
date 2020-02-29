@@ -39,6 +39,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('adminTournament/{id}/editSchema', 'TournamentNodeController@editSchema');
     Route::get('adminTournament/{id}/editSchema/addNode', 'TournamentNodeController@editSchemaAddNode');
 
+    Route::get('adminTournament/{id}/createSchema', 'TournamentNodeController@createSchema');
+    Route::get('adminTournament/createNewSchema', 'TournamentNodeController@createSchemaAction');
+
+
     Route::get('/admin', 'AdminController@index');
 
     Route::get('/adminRecalculateRating', 'AdminController@RecalculateRating');

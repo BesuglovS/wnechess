@@ -196,4 +196,131 @@ class TournamentNodeController extends Controller
 
         return redirect()->back();
     }
+
+    public function createSchema(int $tournamentId) {
+        $tournament = Tournament::find($tournamentId);
+
+        $players = Player::all()->sortBy('name');
+
+        return view('admin.tournament.createSchema', compact('tournament', 'players'));
+    }
+
+    public function createSchemaAction(Request $request) {
+        $ids = explode(",", $request->ids);
+        $tournamentId = $request->tournamentId;
+
+        DB::table('tournament_nodes')
+            ->where('tournament_id', '=', $tournamentId)
+            ->delete();
+
+        $players = DB::table('players')
+            //->whereIn('id', $request)
+            ->whereIn('id', $ids)
+            ->get()
+            ->toArray();
+
+        usort($players, function ($a, $b) {
+            if ($a->rating === $b->rating) {
+                if ($a->averageOpponentRating === $b->averageOpponentRating) {
+                    if ($a->gamesPlayed === $b->gamesPlayed) {
+                        return $a->name > $b->name ? 1 : -1;
+                    } else {
+                        return $a->gamesPlayed > $b->gamesPlayed ? 1 : -1;
+                    }
+                } else {
+                    return $a->averageOpponentRating > $b->averageOpponentRating ? 1 : -1;
+                }
+            } else {
+                return $a->rating > $b->rating ? 1 : -1;
+            }
+        });
+
+        $count = count($players);
+
+        $power = 1;
+        while($power < $count) {
+            $power *= 2;
+        }
+        $power /= 2;
+
+        $nodes = array();
+
+        if ($count > 3) {
+            // Матч за 3 место
+            $newTnode = new TournamentNode();
+            $newTnode->name = "Матч за 3 место";
+            $newTnode->game_id = null;
+            $newTnode->parent_id = null; //TODO:
+            $newTnode->player1_id = null; //TODO:
+            $newTnode->player2_id = null; //TODO:
+            $newTnode->tournament_id = $tournamentId;
+
+            $newTnode->save();
+            $nodes[] = $newTnode;
+        }
+
+        $nodeIdByName = array();
+
+        for ($stage = 1; $stage <= $power; $stage *= 2) {
+            $gameCount = ($count == $stage) ? ($count / 2) : (($count > $stage * 2) ? $stage : ($count - $stage));
+
+            for ($gi = 1; $gi <= $gameCount; $gi++) {
+                $newTnode = new TournamentNode();
+                $newTnode->name = $this->getStageName($stage) . ($stage !== 1 ? (" " . $gi) : "");
+                $newTnode->game_id = null;
+
+                $parentId = null;
+                if ($stage > 1) {
+                    $parentGameIndex = intdiv($gi + 1, 2);
+                    $parentName = $this->getStageName($stage / 2) . (($stage > 2) ? (" " . $parentGameIndex) : "");
+                    $parentId = $nodeIdByName[$parentName];
+                }
+
+                $newTnode->parent_id = $parentId;
+                $newTnode->player1_id = null; //TODO:
+                $newTnode->player2_id = null; //TODO:
+                $newTnode->tournament_id = $tournamentId;
+
+                if (($count !== $power) && ($stage == $power / 2) && ($count - $power < $gi*2 - 1)) {
+                    $newTnode->player1_id = $players[$count - ($stage - $gi + 1) * 2]->id;
+                }
+
+                if (($count !== $power) && ($stage == $power / 2) && ($count - $power < $gi*2)) {
+                    $newTnode->player2_id = $players[$count - ($stage - $gi + 1) * 2 + 1]->id;
+                }
+
+                if (($count !== $power) && ($stage == $power) && ($gi <= $count - $power)) {
+                    $newTnode->player1_id = $players[($gi - 1)*2]->id;
+                }
+
+                if (($count !== $power) && ($stage == $power) && ($gi <= $count - $power)) {
+                    $newTnode->player2_id = $players[($gi - 1)*2 + 1]->id;
+                }
+
+                if (($count == $power) && ($stage == $power)) {
+                    $newTnode->player1_id = $players[($gi - 1)*2]->id;
+                }
+
+                if (($count == $power) && ($stage == $power)) {
+                    $newTnode->player2_id = $players[($gi - 1)*2 + 1]->id;
+                }
+
+                $newTnode->save();
+                $nodes[] = $newTnode;
+                $nodeIdByName[$newTnode->name] = $newTnode->id;
+            }
+        }
+
+
+        return $nodes;
+    }
+
+    private function getStageName(int $stage)
+    {
+        if ($stage == 1) return "Финал";
+        if ($stage == 2) return "Полуфинал";
+
+        return "1/" . $stage . " финала";
+    }
+
 }

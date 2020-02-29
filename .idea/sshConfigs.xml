@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="u461885.ssh.masterhost.ru" id="e65a4d99-7b13-4b93-9c7c-6fb32f17c694" port="22" username="u461885" />
+      <sshConfig authType="PASSWORD" host="127.0.0.1" id="93cecf81-04ff-4aea-8fe2-f40c3138a794" port="2222" username="vagrant" />
+    </configs>
+  </component>
+</project>

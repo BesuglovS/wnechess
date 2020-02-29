@@ -56,7 +56,9 @@
             <div style="margin-left: 3em;">
                 <a href="{{ url('/') }}/adminGames/create">Добавить игру</a> <br />
 
-                <a href="{{ url('/') }}/adminTournament/{{$tournament->id}}/editSchema">Редактировать схему</a>
+                <a href="{{ url('/') }}/adminTournament/{{$tournament->id}}/editSchema">Редактировать схему</a> <br />
+
+                <a href="{{ url('/') }}/adminTournament/{{$tournament->id}}/createSchema">Создать схему автоматически</a>
             </div>
         </div>
 

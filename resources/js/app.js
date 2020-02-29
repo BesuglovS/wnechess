@@ -23,6 +23,7 @@ Vue.component('recalculate-rating', require('./components/RecalculateRating').de
 Vue.component('player', require('./components/Player').default);
 Vue.component('tournament-tree', require('./components/TournamentTree').default);
 Vue.component('tournament-tree-node', require('./components/TournamentTreeNode').default);
+Vue.component('create-tournament-schema', require('./components/CreateTournamentSchema').default);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

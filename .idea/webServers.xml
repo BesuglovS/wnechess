@@ -3,11 +3,17 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="d3aa8333-47b1-496a-b78a-e9678ba59ab0" name="wne-sftp" url="http://u461885.ssh.masterhost.ru">
-        <fileTransfer host="u461885.ssh.masterhost.ru" port="22" accessType="SFTP">
+        <fileTransfer accessType="SFTP" sshConfig="&lt;username&gt;@&lt;host&gt;:&lt;port&gt; (k)">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>
-          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+      <webServer id="107db388-ca89-4cb5-a55a-a840d0903c7e" name="homestead" url="http://chess.test:8000">
+        <fileTransfer rootFolder="/home/vagrant/chess" accessType="SFTP" sshConfig="vagrant@127.0.0.1:2222 (p)">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
         </fileTransfer>
       </webServer>
     </option>
