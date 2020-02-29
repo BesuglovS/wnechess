@@ -56090,7 +56090,7 @@ var render = function() {
       _c(
         "a",
         {
-          attrs: { href: _vm.prefix + "Tournament/Graph/" + _vm.tournament.id }
+          attrs: { href: _vm.prefix + "/Tournament/Graph/" + _vm.tournament.id }
         },
         [_vm._v("Схема турнира")]
       )

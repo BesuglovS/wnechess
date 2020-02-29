@@ -2,7 +2,7 @@
     <div>
         <div class="container alert alert-info alert-block">
             <a :href="prefix + '/adminTournaments'">Список турниров</a> |
-            <a :href="prefix + 'Tournament/Graph/' + tournament.id">Схема турнира</a>
+            <a :href="prefix + '/Tournament/Graph/' + tournament.id">Схема турнира</a>
         </div>
         <div class="container" style="align-items: center; display: flex; flex-direction: column; justify-content: center;">
             <div>

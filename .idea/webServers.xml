@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="d3aa8333-47b1-496a-b78a-e9678ba59ab0" name="wne-sftp" url="http://u461885.ssh.masterhost.ru">
-        <fileTransfer accessType="SFTP" sshConfig="&lt;username&gt;@&lt;host&gt;:&lt;port&gt; (k)">
+        <fileTransfer accessType="SFTP" sshConfig="u461885@u461885.ssh.masterhost.ru:22 (p)">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
           </advancedOptions>

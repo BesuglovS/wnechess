@@ -19,18 +19,10 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="Round tournament games display without tournament nodes">
-      <change afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/CreateTournamentSchema.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/admin/tournament/createSchema.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+    <list default="true" id="37def441-21f1-4ff5-8a5c-c8b4b3483a68" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/TournamentNodeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/TournamentNodeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/admin/tournament/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/tournament/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/CreateTournamentSchema.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/CreateTournamentSchema.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -231,7 +223,7 @@
       <workItem from="1582735492981" duration="3366000" />
       <workItem from="1582783304132" duration="1312000" />
       <workItem from="1582892131105" duration="5859000" />
-      <workItem from="1582976805525" duration="11583000" />
+      <workItem from="1582976805525" duration="12040000" />
     </task>
     <task id="LOCAL-00001" summary="Fix constant reference">
       <created>1581692209386</created>
@@ -296,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582784003890</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Create Tournament schema automatically">
+      <created>1582988483294</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1582988483294</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -326,23 +325,25 @@
     <MESSAGE value="Tournament graph view" />
     <MESSAGE value="Tournament graph view extra connection fix" />
     <MESSAGE value="Round tournament games display without tournament nodes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Round tournament games display without tournament nodes" />
+    <MESSAGE value="Create Tournament schema automatically" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create Tournament schema automatically" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="179" key="#Deployment" timestamp="1581926674490">
+    <state x="552" y="179" key="#Deployment" timestamp="1582988695786">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="179" key="#Deployment/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1581926674490" />
+    <state x="552" y="179" key="#Deployment/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582988695786" />
     <state x="2472" y="179" key="#Deployment/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1581681431200" />
     <state x="552" y="179" key="#Deployment/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579332143824" />
-    <state x="552" y="179" key="#Options" timestamp="1579332089022">
+    <state x="552" y="179" key="#Options" timestamp="1582988658551">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="552" y="179" key="#Options/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582988658551" />
     <state x="552" y="179" key="#Options/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579332089022" />
-    <state x="536" y="165" key="#SSH_Configurations" timestamp="1582983150668">
+    <state x="536" y="165" key="#SSH_Configurations" timestamp="1582988682504">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582983150668" />
+    <state x="536" y="165" key="#SSH_Configurations/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582988682504" />
     <state x="540" y="175" key="#Servers" timestamp="1582982360212">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -360,14 +361,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="778" y="344" key="#com.jetbrains.php.debug.validation.PhpWebServerValidationDialog#/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582983524444" />
-    <state x="551" y="107" key="CommitChangelistDialog2" timestamp="1582988401041">
+    <state x="590" y="104" key="CommitChangelistDialog2" timestamp="1582988481433">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="551" y="107" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582988401041" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582694069640">
+    <state x="590" y="104" key="CommitChangelistDialog2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582988481433" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1582988695869">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582694069640" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582988695869" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1581684433266">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -452,10 +453,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582976816409" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1582784005852">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1582988484814">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582784005852" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582988484814" />
     <state x="669" y="161" key="com.intellij.database.view.ui.AbstractDbRefactoringDialog" timestamp="1581916475509">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -498,10 +499,10 @@
       <screen x="1920" y="9" width="1920" height="1040" />
     </state>
     <state x="1995" y="9" width="1399" height="1025" maximized="true" key="dock-window-6/0.0.1920.1040/1920.9.1920.1040@0.0.1920.1040" timestamp="1579168486643" />
-    <state x="656" y="116" width="607" height="807" key="find.popup" timestamp="1582111554641">
+    <state x="656" y="116" width="607" height="807" key="find.popup" timestamp="1582988852939">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="116" width="607" height="807" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582111554641" />
+    <state x="656" y="116" width="607" height="807" key="find.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582988852939" />
     <state x="1008" y="267" key="ftp.server.browser" timestamp="1582983214482">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
