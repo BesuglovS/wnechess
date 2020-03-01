@@ -58,6 +58,8 @@
 
                 <a href="{{ url('/') }}/adminTournament/{{$tournament->id}}/editSchema">Редактировать схему</a> <br />
 
+                <a href="{{ url('/') }}/adminTournament/Graph/{{$tournament->id}}">Редактировать граф</a> <br />
+
                 <a href="{{ url('/') }}/adminTournament/{{$tournament->id}}/createSchema">Создать схему автоматически</a>
             </div>
         </div>

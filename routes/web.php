@@ -42,6 +42,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('adminTournament/{id}/createSchema', 'TournamentNodeController@createSchema');
     Route::get('adminTournament/createNewSchema', 'TournamentNodeController@createSchemaAction');
 
+    Route::get('adminTournament/Graph/{id}', 'TournamentNodeController@graph');
 
     Route::get('/admin', 'AdminController@index');
 

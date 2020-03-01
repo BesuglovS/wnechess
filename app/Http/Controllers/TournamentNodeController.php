@@ -214,21 +214,26 @@ class TournamentNodeController extends Controller
             ->delete();
 
         $players = DB::table('players')
-            //->whereIn('id', $request)
             ->whereIn('id', $ids)
             ->get()
             ->toArray();
 
         usort($players, function ($a, $b) {
             if ($a->rating === $b->rating) {
-                if ($a->averageOpponentRating === $b->averageOpponentRating) {
-                    if ($a->gamesPlayed === $b->gamesPlayed) {
-                        return $a->name > $b->name ? 1 : -1;
+                if ($a->gamesPlayed === $b->gamesPlayed) {
+                    $aGroupSplit = explode(" ", $a->group); $aGroup = intval($aGroupSplit[0]);
+                    $bGroupSplit = explode(" ", $b->group); $bGroup = intval($bGroupSplit[0]);
+                    if ($aGroup === $bGroup) {
+                        if ($a->averageOpponentRating === $b->averageOpponentRating) {
+                            return $a->name > $b->name ? 1 : -1;
+                        } else {
+                            return $a->averageOpponentRating > $b->averageOpponentRating ? 1 : -1;
+                        }
                     } else {
-                        return $a->gamesPlayed > $b->gamesPlayed ? 1 : -1;
+                        return $aGroup > $bGroup ? 1 : -1;
                     }
                 } else {
-                    return $a->averageOpponentRating > $b->averageOpponentRating ? 1 : -1;
+                    return $a->gamesPlayed > $b->gamesPlayed ? 1 : -1;
                 }
             } else {
                 return $a->rating > $b->rating ? 1 : -1;
@@ -250,9 +255,9 @@ class TournamentNodeController extends Controller
             $newTnode = new TournamentNode();
             $newTnode->name = "Матч за 3 место";
             $newTnode->game_id = null;
-            $newTnode->parent_id = null; //TODO:
-            $newTnode->player1_id = null; //TODO:
-            $newTnode->player2_id = null; //TODO:
+            $newTnode->parent_id = null;
+            $newTnode->player1_id = null;
+            $newTnode->player2_id = null;
             $newTnode->tournament_id = $tournamentId;
 
             $newTnode->save();
@@ -277,8 +282,8 @@ class TournamentNodeController extends Controller
                 }
 
                 $newTnode->parent_id = $parentId;
-                $newTnode->player1_id = null; //TODO:
-                $newTnode->player2_id = null; //TODO:
+                $newTnode->player1_id = null;
+                $newTnode->player2_id = null;
                 $newTnode->tournament_id = $tournamentId;
 
                 if (($count !== $power) && ($stage == $power / 2) && ($count - $power < $gi*2 - 1)) {
@@ -323,4 +328,17 @@ class TournamentNodeController extends Controller
         return "1/" . $stage . " финала";
     }
 
+    public function graph(int $tournamentId) {
+        $tournament = Tournament::find($tournamentId);
+
+        $tournamentNodes = DB::table('tournament_nodes as node')
+            ->leftJoin('games as game', 'node.game_id', '=', 'game.id')
+            ->leftJoin('players as pl1', 'node.player1_id', '=', 'pl1.id')
+            ->leftJoin('players as pl2', 'node.player2_id', '=', 'pl2.id')
+            ->where('node.tournament_id', '=', $tournamentId)
+            ->select('node.*', 'game.*', 'pl1.name as pl1Name', 'pl2.name as pl2Name', 'node.id as node_id')
+            ->get();
+
+        return view('admin.tournament.graph', compact('tournament', 'tournamentNodes'));
+    }
 }

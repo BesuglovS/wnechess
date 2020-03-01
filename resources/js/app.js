@@ -22,6 +22,7 @@ window.Vue = require('vue');
 Vue.component('recalculate-rating', require('./components/RecalculateRating').default);
 Vue.component('player', require('./components/Player').default);
 Vue.component('tournament-tree', require('./components/TournamentTree').default);
+Vue.component('admin-tournament-tree', require('./components/AdminTournamentTree').default);
 Vue.component('tournament-tree-node', require('./components/TournamentTreeNode').default);
 Vue.component('create-tournament-schema', require('./components/CreateTournamentSchema').default);
 

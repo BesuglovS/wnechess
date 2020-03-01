@@ -18,6 +18,7 @@
             <div class="container" style="align-items: center; display: flex; justify-content: center;">
                 <table style="margin: 10px" class="table td-center is-bordered">
                     <tr>
+                        <th>#</th>
                         <th>Имя</th>
                         <th>Группа</th>
                         <th>Рейтинг</th>
@@ -27,7 +28,8 @@
                         <th>Исключить</th>
                     </tr>
 
-                    <tr v-for="player in tournamentPlayerList">
+                    <tr v-for="(player, index) in tournamentPlayerList">
+                        <td>{{index+1}}</td>
                         <td><a :href="prefix + '/adminPlayer/' + player.id">{{player.name}}</a></td>
                         <td>{{player.group}}</td>
                         <td>{{player.rating}}</td>
